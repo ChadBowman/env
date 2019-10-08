@@ -1,0 +1,42 @@
+" vin-plug plugins
+call plug#begin(stdpath('data') . '/plugged')
+
+" fuzzy file finder
+Plug 'cloudhead/neovim-fuzzy'
+
+" display vertical lines to better visulize code blocks
+Plug 'Yggdroot/indentLine'
+
+" async linting engine
+Plug 'w0rp/ale'
+
+" see ANSI colors
+Plug 'vim-scripts/AnsiEsc.vim'
+
+call plug#end()
+
+" key mappings
+" fuzzy file finder
+nnoremap <C-F> :FuzzyOpen<CR>
+
+" basic
+set tabstop=4               " number of spaces for TAB
+set softtabstop=4           " number of spaces of tab when editing
+set shiftwidth=4            " number of spaces to use for autoindent
+set expandtab               " converts tabs to spaces
+set number                  " show line numbers
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" ale
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_linters = {'python': ['flake8']}
+
+" run execute file with ctrl + b
+nnoremap <C-B> :w<Return>:!python %<Return>
