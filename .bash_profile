@@ -1,14 +1,16 @@
-#   python
+#--- python
+
 # make pyenv's python available
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-#   ruby
+#--- ruby
+
 # make homebrew's ruby available
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-# convenience functions
+#--- convenience functions
 
 # edit bash profile
 ebp() {
@@ -23,3 +25,7 @@ evim() {
 
 # aliases
 alias v=nvim
+
+#--- environment variables
+
+export DEV_LOGGING=1
