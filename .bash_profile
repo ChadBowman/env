@@ -1,3 +1,16 @@
+#--- git
+
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commmit'
+alias gd='git diff'
+alias go='git checkout'
+
+#--- neovim
+
+alias v=nvim
+
 #--- python
 
 # make pyenv's python available
@@ -22,9 +35,6 @@ ebp() {
 evim() {
     nvim ~/.config/nvim/init.vim
 }
-
-# aliases
-alias v=nvim
 
 #--- environment variables
 
