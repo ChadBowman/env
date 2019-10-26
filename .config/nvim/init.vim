@@ -32,7 +32,10 @@ set shiftwidth=4            " number of spaces to use for autoindent
 set expandtab               " converts tabs to spaces
 set number                  " show line numbers
 
-"split navigations
+" yank to clipboard
+set clipboard+=unnamedplus
+
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -46,4 +49,3 @@ let g:ale_linters = {'python': ['flake8']}
 
 " run execute python file with ctrl + b
 nnoremap <C-B> :w<Return>:!python %<Return>
-
