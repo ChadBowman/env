@@ -37,7 +37,7 @@ evim() {
 }
 
 # parse current git branch
-parse_git_branch() {
+function parse_git_branch {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
 
@@ -47,4 +47,4 @@ parse_git_branch() {
 export DEV_LOGGING=1
 
 # pretty terminal
-export PS1="\[\e[33m\]\w\[\e[m\] on \[\e[31m\]$(parse_git_branch)\[\e[m\] $ "
+export PS1="\[\e[33m\]\w\[\e[m\] on \[\e[31m\]\$(parse_git_branch)\[\e[m\] \$ "
