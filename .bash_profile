@@ -1,3 +1,6 @@
+#--- source local config
+source ~/.bash_profile-local
+
 #--- git
 
 alias gs='git status'
@@ -15,7 +18,7 @@ alias v=nvim
 
 # make pyenv's python available
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
 fi
 
 #--- ruby
