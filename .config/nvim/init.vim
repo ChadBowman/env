@@ -31,6 +31,7 @@ set softtabstop=4           " number of spaces of tab when editing
 set shiftwidth=4            " number of spaces to use for autoindent
 set expandtab               " converts tabs to spaces
 set number                  " show line numbers
+set noswapfile              " don't create swap files
 
 " yank to clipboard
 set clipboard+=unnamedplus
