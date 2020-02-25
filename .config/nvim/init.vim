@@ -16,6 +16,9 @@ Plug 'vim-scripts/AnsiEsc.vim'
 " nerdtree file viewer
 Plug 'scrooloose/nerdtree'
 
+" fugitive for enhanced git integration
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " fuzzy file finder
