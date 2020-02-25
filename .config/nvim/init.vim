@@ -48,5 +48,8 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_linters = {'python': ['flake8']}
 
+" Python
 " run execute python file with ctrl + b
 nnoremap <C-B> :w<Return>:!python %<Return>
+" see pydoc
+nnoremap <buffer> <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>

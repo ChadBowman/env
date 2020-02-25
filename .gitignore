@@ -1,20 +1,8 @@
-.CFUserTextEncoding
-.DS_Store
-.Trash
-.bash_history
-.bash_sessions
-.gem
-.gitconfig-local
-.local
-.pyenv
-.python_history
-.viminfo
-Applications
-Desktop
-Documents
-Downloads
-Library
-Movies
-Music
-Pictures
-Public
+# Blacklist everything
+/**
+
+# Whitelist what I want
+!.gitignore
+!.gitconfig
+!.bash_profile
+!.config

@@ -1,6 +1,6 @@
 [include]
     path = ~/.gitconfig-local
 [push]
-	default = current
+    default = current
 [core]
     editor = nvim
