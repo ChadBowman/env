@@ -23,10 +23,19 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+# shortcut for unit tests
+alias pytest='python -m unittest discover -v'
+
 #--- ruby
 
 # make homebrew's ruby available
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+#--- java
+
+# activate jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 #--- convenience functions
 
