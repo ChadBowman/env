@@ -19,6 +19,9 @@ Plug 'scrooloose/nerdtree'
 " fugitive for enhanced git integration
 Plug 'tpope/vim-fugitive'
 
+" yaml intentation
+Plug 'avakhov/vim-yaml'
+
 call plug#end()
 
 " fuzzy file finder
