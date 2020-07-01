@@ -25,8 +25,10 @@ fi
 
 #--- ruby
 
-# make homebrew's ruby available
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+# make RVM's ruby available
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm;
+fi
 
 #--- convenience functions
 
