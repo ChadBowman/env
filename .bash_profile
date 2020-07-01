@@ -23,12 +23,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+# shortcut for unit tests
+alias pytest='python -m unittest discover -v'
+
 #--- ruby
 
 # make RVM's ruby available
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
   source $HOME/.rvm/scripts/rvm;
 fi
+
+#--- java
+
+# activate jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 #--- convenience functions
 

@@ -58,4 +58,4 @@ let g:ale_linters = {'python': ['flake8']}
 " run execute python file with ctrl + b
 nnoremap <C-B> :w<Return>:!python %<Return>
 " see pydoc
-nnoremap <buffer> <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
