@@ -59,8 +59,5 @@ function parse_git_branch {
 
 #--- environment variables
 
-# pretty logs
-export DEV_LOGGING=1
-
 # pretty terminal
 export PS1="\[\e[33m\]\w\[\e[m\] on \[\e[31m\]\$(parse_git_branch)\[\e[m\] \$ "
