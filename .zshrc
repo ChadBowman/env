@@ -1,5 +1,4 @@
 #--- zsh
-
 # navigation
 setopt no_case_glob
 setopt auto_cd
@@ -21,13 +20,7 @@ ezsh() {
   source ~/.zshrc
 }
 
-# source local config
-if [[ -s ~/.zshrc-local ]]; then
-    source ~/.zshrc-local;
-fi
-
 #--- git
-
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
@@ -36,7 +29,6 @@ alias gd='git diff'
 alias go='git checkout'
 
 #--- neovim
-
 alias v=nvim
 
 evim() {
@@ -44,7 +36,6 @@ evim() {
 }
 
 #--- python 🐍
-
 alias p=python
 
 # make pyenv's python available
@@ -56,14 +47,17 @@ fi
 alias pytest='python -m unittest discover -v'
 
 #--- ruby ♦️
-
 # make RVM's ruby available
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
     source $HOME/.rvm/scripts/rvm;
 fi
 
 #--- java ☕️
-
 # make jenv's java available
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# source local config
+if [[ -s ~/.zshrc-local ]]; then
+    source ~/.zshrc-local;
+fi

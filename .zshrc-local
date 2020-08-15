@@ -19,7 +19,7 @@ kssh() {
 }
 
 #--- mysql-client
-export PATH='/usr/local/opt/mysql-client/bin:$PATH'
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 #--- pretty logs
 export DEV_LOGGING=1
