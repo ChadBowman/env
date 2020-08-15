@@ -1,0 +1,25 @@
+# SOFI CONFIGS
+
+#--- kraken
+
+kssh() {
+    env='dev'
+    
+    if [[ $# -eq 1 ]]; then
+        number='$1'
+    elif [[ $# -eq 2 ]]; then
+        env='$1'
+        number='$2'
+    else
+        echo 'wrong number of args'
+        exit 1
+    fi
+
+    ssh kraken-$env-$number.sofitest.com -tt 'sudo su - sofi'
+}
+
+#--- mysql-client
+export PATH='/usr/local/opt/mysql-client/bin:$PATH'
+
+#--- pretty logs
+export DEV_LOGGING=1
