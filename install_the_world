@@ -1,0 +1,46 @@
+#!/bin/zsh
+# INSTALL THE 🌎
+
+# Pull down git repo
+cd ~/ && git init
+git remote add origin https://github.com/ChadBowman/env.git
+git branch --set-upstream-to=origin/master master
+git fetch && git status
+
+# Install Brew 🍺
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Install a better terminal
+brew cask install iterm2
+
+# Install neovim 👾
+brew install nvim
+
+# Install vim-plug
+autoload_loc="$(brew info nvim | grep Cellar | sed 's/ .*//')/share/nvim/runtime/autoload"
+curl -fLo "$autoload_loc/plug.vim" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install python 🐍
+python_version=3.8.5
+brew install pyenv
+pyenv install $python_version && pyenv global $python_version && pyenv version
+
+# Install ruby ♦️
+ruby_vesrion=2.7
+\curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm install $ruby_version && rvm docs generate-ri
+# you may need to delete the modification to .zshrc
+
+# Install java ☕️
+brew install jenv
+brew install java11
+sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+cd /Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home && jenv add . && cd ~/
+jenv global 11 jenv version
+
+# Install commonly-used utilities
+# ripgrep
+brew install rg
+# httpie
+brew install httpie
