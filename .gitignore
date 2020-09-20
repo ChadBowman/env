@@ -5,6 +5,6 @@
 !.gitignore
 !.gitconfig
 !.bash_profile
-!.config
 !.zshrc
+!.config
 !.install_the_world
