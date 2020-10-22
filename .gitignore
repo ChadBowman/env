@@ -1,5 +1,6 @@
 # Blacklist everything
 /**
+.zshrc-local
 
 # Whitelist what I want
 !.gitignore
