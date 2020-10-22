@@ -46,3 +46,7 @@ brew install gradle
 brew install rg
 # httpie
 brew install httpie
+
+#Install docker
+brew install docker docker-machine
+brew cask install virtualbox

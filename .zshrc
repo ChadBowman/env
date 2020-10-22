@@ -57,6 +57,16 @@ fi
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+#--- docker 🐳
+alias dm='docker-machine'
+function dm_create() {
+    docker-machine create --driver virtualbox $1
+}
+function dm_env() {
+    docker-machine env $1
+    eval $(docker-machine env $1)
+}
+
 # source local config
 if [[ -s ~/.zshrc-local ]]; then
     source ~/.zshrc-local;
