@@ -22,6 +22,9 @@ Plug 'tpope/vim-fugitive'
 " yaml intentation
 Plug 'avakhov/vim-yaml'
 
+" CSV support
+Plug 'chrisbra/csv.vim'
+
 call plug#end()
 
 " fuzzy file finder
