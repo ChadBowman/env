@@ -8,4 +8,5 @@
 !.bash_profile
 !.zshrc
 !.config
+!.config/flake8
 !.install_the_world
