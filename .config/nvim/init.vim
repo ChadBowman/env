@@ -56,6 +56,10 @@ let g:ale_linters = {'python': ['flake8']}
 
 " Python
 " run execute python file with ctrl + b
-nnoremap <C-B> :w<Return>:!python %<Return>
+autocmd FileType python nnoremap <buffer> <C-B> :w<Return>:!python %<Return>
 " see pydoc
-nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+autocmd FileType python nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+
+" C
+" compile and run file with ctrl + b
+autocmd FileType c nnoremap <buffer> <C-B> :w<Return>:!exe=$(echo % | sed "s/\.c//g") && cc -o $exe % && ./$exe<Return>
