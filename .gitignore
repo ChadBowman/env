@@ -1,10 +1,11 @@
 # Blacklist everything
 /**
+.zshrc-local
 
 # Whitelist what I want
 !.gitignore
 !.gitconfig
 !.bash_profile
-!.config
 !.zshrc
+!.config
 !.install_the_world

@@ -37,10 +37,16 @@ brew install jenv
 brew install java11
 sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
 cd /Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home && jenv add . && cd ~/
-jenv global 11 jenv version
+jenv global 11 && jenv version
+# Install gradle
+brew install gradle
 
 # Install commonly-used utilities
 # ripgrep
 brew install rg
 # httpie
 brew install httpie
+
+#Install docker
+brew install docker docker-machine
+brew cask install virtualbox
