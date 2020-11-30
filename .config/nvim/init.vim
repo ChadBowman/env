@@ -22,6 +22,9 @@ Plug 'tpope/vim-fugitive'
 " yaml intentation
 Plug 'avakhov/vim-yaml'
 
+" CSV support
+Plug 'chrisbra/csv.vim'
+
 call plug#end()
 
 " fuzzy file finder
@@ -56,6 +59,12 @@ let g:ale_linters = {'python': ['flake8']}
 
 " Python
 " run execute python file with ctrl + b
-nnoremap <C-B> :w<Return>:!python %<Return>
+autocmd FileType python nnoremap <buffer> <C-B> :w<Return>:!python %<Return>
 " see pydoc
-nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+autocmd FileType python nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+" run tests
+autocmd FileType python nnoremap <buffer> <C-T> :w<Return>:!nosetests -v --nocapture<Return>
+
+" C
+" compile and run file with ctrl + b
+autocmd FileType c nnoremap <buffer> <C-B> :w<Return>:!exe=$(echo % | sed "s/\.c//g") && cc -o $exe % && ./$exe<Return>
