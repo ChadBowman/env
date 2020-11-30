@@ -57,6 +57,9 @@ fi
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+#--- Gradle
+alias g=./gradlew
+
 #--- docker 🐳
 alias dm='docker-machine'
 function dm_create() {
