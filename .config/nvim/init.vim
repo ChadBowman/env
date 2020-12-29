@@ -63,8 +63,7 @@ autocmd FileType python nnoremap <buffer> <C-B> :w<Return>:!python %<Return>
 " see pydoc
 autocmd FileType python nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
 " run tests
-autocmd FileType python nnoremap <buffer> <C-T> :w<Return>:!nosetests -v --nocapture<Return>
-
+autocmd FileType python nnoremap <buffer> <C-T> :w<Return>:!nosetests -v --nocapture --logging-level=INFO<Return>
 " C
 " compile and run file with ctrl + b
 autocmd FileType c nnoremap <buffer> <C-B> :w<Return>:!exe=$(echo % | sed "s/\.c//g") && cc -o $exe % && ./$exe<Return>
