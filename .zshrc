@@ -39,9 +39,9 @@ evim() {
 alias p=python
 
 # make pyenv's python available
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # shortcut for unit tests
 alias pytest='python -m unittest discover -v'

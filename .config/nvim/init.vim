@@ -22,16 +22,14 @@ Plug 'avakhov/vim-yaml'
 " CSV support
 Plug 'chrisbra/csv.vim'
 
+Plug 'eandrju/cellular-automaton.nvim'
+
 call plug#end()
 
-" fuzzy file finder
-nnoremap <C-F> :FuzzyOpen<CR>
-
-" NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
 " basic
+let mapleader=" "
+
+
 set tabstop=4               " number of spaces for TAB
 set softtabstop=4           " number of spaces of tab when editing
 set shiftwidth=4            " number of spaces to use for autoindent
@@ -43,10 +41,19 @@ set noswapfile              " don't create swap files
 set clipboard+=unnamedplus
 
 " split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
+
+" fuzzy file finder
+nnoremap <leader>f :FuzzyOpen<cr>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+
+nnoremap <leader>w :w<cr>   " quickly save
 
 " ale (linter)
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -55,13 +62,13 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_linters = {'python': ['flake8']}
 
 " Python
-" run execute python file with ctrl + b
-autocmd FileType python nnoremap <buffer> <C-B> :w<Return>:!python %<Return>
+" run execute python file 
+autocmd FileType python nnoremap <buffer> <leader>b :w<Return>:!python %<Return>
 " see pydoc
-autocmd FileType python nnoremap <C-I> :<C-u>execute "!pydoc " . expand("<cword>")<CR>
-" run tests with ctrl + t
-autocmd FileType python nnoremap <buffer> <C-T> :w<Return>:!nosetests -v --nocapture --logging-level=INFO<Return>
+autocmd FileType python nnoremap <buffer> <leader>i :<C-u>execute "!pydoc " . expand("<cword>")<CR>
+" run tests 
+autocmd FileType python nnoremap <buffer> <leader>t :w<Return>:!python -m pytest<Return>
 
 " C
-" compile and run file with ctrl + b
-autocmd FileType c nnoremap <buffer> <C-B> :w<Return>:!exe=$(echo % | sed "s/\.c//g") && cc -o $exe % && ./$exe<Return>
+" compile and run file
+autocmd FileType c nnoremap <buffer> <leader>b :w<Return>:!exe=$(echo % | sed "s/\.c//g") && cc -o $exe % && ./$exe<Return>
